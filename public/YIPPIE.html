@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>YIPPIE</title>
+    <link href="app.css" rel="stylesheet">
+</head>
+<body>
+<div id="overview">
+    <H1>YIPPIE</H1>
+    <img src="cat-jump.gif" >
+</div>
+<form id="valentineOptionForm" action>
+    <label class = "valentinesLabel" id="emailLabel" for="email">Enter Your Email:</label><input id="email" name="email" type="email" />
+    <label class = "valentinesLabel" for="kisses"> <input id="kisses" name="valentinesOptions" type="checkbox" value=" Lots of Kisses"/>Kisses</label>
+    <label class = "valentinesLabel" for="hugs"> <input id="hugs" name="valentinesOptions" type="checkbox" value="Warm Hugs"/>Hugs</label>
+    <label class = "valentinesLabel" for="cuddles"> <input id="cuddles" name="valentinesOptions" type="checkbox" value="Cozy Cuddles"/>Cuddles</label>
+    <label class = "valentinesLabel" for="extra"> Anything Extra<textarea id="extra" name="valentinesOptions"></textarea></label>
+    <input id="submitEmailButton" onclick="submitEmailButton()" type="submit" value="Submit">
+</form>
+
+<script src="index.js"></script>
+</body>
+</html>
