@@ -78,6 +78,10 @@ margin: 5px 15px;
 
 #submitEmailButton{
     margin: 0 10px;
+    font-size: 1em;
+    height:40px;
+    width: 100px;
+
 }
 #valentinesForm{
     margin: 20px 31%;
