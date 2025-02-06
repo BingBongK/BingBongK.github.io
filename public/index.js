@@ -65,8 +65,8 @@ function noButtonClick() {
 
 //}
 
-
-  document.getElementById('valentineOptionForm').addEventListener('submit', async function (event) {
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById('valentineOptionForm').addEventListener('submit', async function (event) {
     event.preventDefault();
 
     console.log("Submit button clicked");
@@ -98,5 +98,5 @@ function noButtonClick() {
         } catch (error) {
           document.getElementById('response-message').textContent = `Error: ${error.message}`;
         }
-
       });
+    });
