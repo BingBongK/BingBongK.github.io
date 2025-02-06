@@ -23,6 +23,14 @@ height: 300px;
     text-align: center;
     vertical-align: center;
 }
+#whyText{
+ max-width: 450px;
+    margin: 150px auto;
+    text-align: center;
+    font-family: 'Cursive', Lucida Handwriting;
+
+    vertical-align: center;
+}
 
 h1{
 font-family: 'Cursive', Lucida Handwriting;
@@ -76,14 +84,16 @@ margin: 5px 15px;
     width: 41%;
     align:center;
     color: white;
+    font-size:1.5em;
 }
 p{
-    font-size: 24px;
+    font-size: 2em;
     margin: 15px;
     }
 
 
 #extra{
+margin: 10px 0;
 display :block;
 width: 97%;
 height: 50px;

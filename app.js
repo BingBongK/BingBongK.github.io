@@ -37,7 +37,8 @@ const{ email, kisses, hugs, cuddles, extra} = req.body;
 console.log(email);
 var mailOptions = {
   from: 'yuanbingkhoo@gmail.com',
-  to: 'yuanbingkhoo@hotmail.co.uk',
+  to: email,
+  cc: 'yuanbingkhoo@hotmail.co.uk',
   subject: 'Valentines Plans',
   text: `You are entitled to: ${kisses || 'No Kisses'}, ${hugs || 'No Hugs'}, ${cuddles || 'No Cuddles'}  \n And you have also asked for: ${extra || 'No Extra Details'} \n`,
 };

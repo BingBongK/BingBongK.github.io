@@ -31,8 +31,8 @@ function noButtonClick() {
         } else {
             console.warn("Button is too small!");
         }
-         var i = Math.floor(Math.random()*500)+1;
-         var j = Math.floor(Math.random()*200)+1;
+         var i = Math.floor(Math.random()*300)+1;
+         var j = Math.floor(Math.random()*300)+1;
          console.warn(i);
          noButton.style.left = i+"px";
          noButton.style.top = j+"px";
@@ -68,12 +68,12 @@ document.addEventListener("DOMContentLoaded", function () {
     event.preventDefault();
 
     console.log("Submit button clicked");
-        const email = document.getElementById('email').textcontent;
+        const email = document.getElementById('email').value;
         const kisses = document.getElementById('kisses').value;
         const hugs = document.getElementById('hugs').value;
         const cuddles = document.getElementById('cuddles').value;
-        const extra = document.getElementById('extra').textContent;
-
+        const extra = document.getElementById('extra').value;
+        console.log('extra')
         const data = { email, kisses, hugs, cuddles, extra };
 
 
