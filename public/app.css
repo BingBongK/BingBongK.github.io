@@ -71,18 +71,22 @@ margin: 5px 15px;
 #submitEmailButton{
     margin: 0 10px;
 }
-
-#valentineOptionForm
-{
+#valentinesForm{
     margin: 20px 31%;
     width: 41%;
-    border-style: solid;
+    align:center;
+    color: white;
 }
+p{
+    font-size: 24px;
+    margin: 15px;
+    }
+
+
 #extra{
 display :block;
 width: 97%;
 height: 50px;
 font-size:16px;
-
 }
 
