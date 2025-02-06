@@ -91,7 +91,6 @@ function noButtonClick() {
           const result = await response.json();
 
           if (response.status === 200) {
-             window.location.href = "index.html";
             document.getElementById('response-message').textContent = 'Email sent successfully!';
           } else {
             document.getElementById('response-message').textContent = `Error: ${result.error}`;
