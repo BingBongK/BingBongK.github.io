@@ -4,5 +4,8 @@
     "express": "^4.21.2",
     "nodemailer": "^6.10.0",
     "trial": "^1.1.0"
+  },
+  "scripts": {
+    "start": "node app.js"
   }
 }
