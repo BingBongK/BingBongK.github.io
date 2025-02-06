@@ -28,7 +28,7 @@ height: 300px;
     margin: 150px auto;
     text-align: center;
     font-family: 'Cursive', Lucida Handwriting;
-
+    display: none;
     vertical-align: center;
 }
 

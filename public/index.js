@@ -36,6 +36,8 @@ function noButtonClick() {
          console.warn(i);
          noButton.style.left = i+"px";
          noButton.style.top = j+"px";
+
+         document.getElementById("whyText").style.display = "block";
 }
 //async function submitEmailButton() {
 //console.log("Submit")
@@ -63,7 +65,7 @@ function noButtonClick() {
 
 //}
 
-document.addEventListener("DOMContentLoaded", function () {
+
   document.getElementById('valentineOptionForm').addEventListener('submit', async function (event) {
     event.preventDefault();
 
@@ -97,4 +99,3 @@ document.addEventListener("DOMContentLoaded", function () {
           document.getElementById('response-message').textContent = `Error: ${error.message}`;
         }
       });
-    });
