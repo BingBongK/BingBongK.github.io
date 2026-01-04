@@ -1,72 +1,127 @@
 const scene = document.getElementById("scene");
 const chest = document.getElementById("chest");
 
+// Overlay elements
 const celebrate = document.getElementById("celebrate");
 const closeCelebrate = document.getElementById("closeCelebrate");
+
+const slideImg = document.getElementById("slideImg");
+const slideHeading = document.getElementById("slideHeading");
+const slideDesc = document.getElementById("slideDesc");
+
+const prevSlideBtn = document.getElementById("prevSlide");
+const nextSlideBtn = document.getElementById("nextSlide");
+const nextOrDoneBtn = document.getElementById("nextOrDone");
+const dots = document.getElementById("dots");
+
 const confetti = document.getElementById("confetti");
 
-function popConfetti(count = 80) {
-  const rect = document.body.getBoundingClientRect();
+/** ✅ Put your slideshow content here */
+const slides = [
+  { src: "pictures/jan1.jpg", title: "Welcome reward", desc: "Here’s your first surprise image." },
+  { src: "chestOpen.png", title: "Bonus", desc: "A little extra something for you." },
+];
+
+let current = 0;
+
+function popConfetti(count = 90) {
+  const width = window.innerWidth;
   const colors = ["#F7CFE1", "#ffffff", "#111111", "#ffd166", "#06d6a0", "#118ab2"];
 
   for (let i = 0; i < count; i++) {
     const piece = document.createElement("div");
     piece.className = "confettiPiece";
+    piece.style.left = (Math.random() * width) + "px";
 
-    // random position across screen
-    piece.style.left = Math.random() * rect.width + "px";
-
-    // random size
     const w = 6 + Math.random() * 8;
     const h = 8 + Math.random() * 14;
     piece.style.width = w + "px";
     piece.style.height = h + "px";
 
-    // random color
     piece.style.background = colors[Math.floor(Math.random() * colors.length)];
 
-    // random fall duration + drift
     const dur = 800 + Math.random() * 900;
     piece.style.animationDuration = dur + "ms";
 
-    // slight horizontal drift using translateX via CSS variable
-    const drift = (Math.random() * 2 - 1) * 120;
-    piece.style.transform = `translateX(${drift}px) rotate(${Math.random() * 360}deg)`;
-
     confetti.appendChild(piece);
-
-    // cleanup after animation
-    setTimeout(() => piece.remove(), dur + 100);
+    setTimeout(() => piece.remove(), dur + 120);
   }
 }
 
-function showCelebrate() {
-  celebrate.classList.add("show");
-  celebrate.setAttribute("aria-hidden", "false");
+function renderDots() {
+  dots.innerHTML = "";
+  slides.forEach((_, i) => {
+    const d = document.createElement("div");
+    d.className = "dot" + (i === current ? " active" : "");
+    d.addEventListener("click", () => { current = i; renderSlide(); });
+    dots.appendChild(d);
+  });
 }
 
-function hideCelebrate() {
+function renderSlide() {
+  const s = slides[current];
+  slideImg.src = s.src;
+  slideImg.alt = s.title || `Slide ${current + 1}`;
+  slideHeading.textContent = s.title || "";
+  slideDesc.textContent = s.desc || "";
+
+  // Buttons
+  prevSlideBtn.disabled = (current === 0);
+  nextSlideBtn.disabled = (current === slides.length - 1);
+
+  nextOrDoneBtn.textContent = (current === slides.length - 1) ? "Done" : "Next";
+
+  renderDots();
+}
+
+function showOverlay() {
+  celebrate.classList.add("show");
+  celebrate.setAttribute("aria-hidden", "false");
+  current = 0;
+  renderSlide();
+}
+
+function hideOverlay() {
   celebrate.classList.remove("show");
   celebrate.setAttribute("aria-hidden", "true");
 }
 
+function nextSlide() {
+  if (current < slides.length - 1) {
+    current++;
+    renderSlide();
+  } else {
+    hideOverlay();
+  }
+}
+function prevSlide() {
+  if (current > 0) {
+    current--;
+    renderSlide();
+  }
+}
+
+// Chest click: open + show slideshow + confetti
 chest.addEventListener("click", () => {
   const opened = scene.classList.toggle("open");
-
   if (opened) {
-    // “shoot message on screen”
-    showCelebrate();
-
-    // confetti burst
-    popConfetti(110);
-
-    // optional: auto close chest after celebration
-    // setTimeout(() => scene.classList.remove("open"), 1200);
+    popConfetti(120);
+    showOverlay();
   } else {
-    hideCelebrate();
+    hideOverlay();
   }
 });
 
-closeCelebrate.addEventListener("click", () => {
-  hideCelebrate();
+// Slider controls
+nextSlideBtn.addEventListener("click", nextSlide);
+prevSlideBtn.addEventListener("click", prevSlide);
+nextOrDoneBtn.addEventListener("click", nextSlide);
+closeCelebrate.addEventListener("click", hideOverlay);
+
+// Keyboard controls (nice UX)
+document.addEventListener("keydown", (e) => {
+  if (!celebrate.classList.contains("show")) return;
+  if (e.key === "Escape") hideOverlay();
+  if (e.key === "ArrowRight") nextSlide();
+  if (e.key === "ArrowLeft") prevSlide();
 });
