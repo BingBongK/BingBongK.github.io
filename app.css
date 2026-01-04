@@ -1,0 +1,55 @@
+button{
+    width: 120px;
+    height: 80px;
+    margin: 10px;
+    border: 0px;
+    text-align: center;
+    font-size: 2em;
+    position: relative;
+
+}
+body {
+    background-color: #F7CFE1
+    /*Sakura colour*/
+;
+}
+img{
+max-Width: 300px;
+height: 300px;
+
+}
+
+.buttons {
+    max-width: 450px;
+    margin: 50px auto;
+    text-align: center;
+    vertical-align: center;
+}
+
+h1{
+font-family: 'Cursive', Lucida Handwriting;
+font-size: 64px;
+
+}
+.yesButton{
+    background-color:green;
+}
+.yesButton:hover{
+    background-color:darkgreen;
+}
+
+.noButton{
+   background-color:darkred;
+}
+.noButton:hover{
+   background-color:#610505;
+}
+
+#overview{
+    width: 800px;
+    height: 600px;
+    margin: 50px auto;
+    text-align: center;
+    vertical-align: center;
+    border-style: solid;
+}

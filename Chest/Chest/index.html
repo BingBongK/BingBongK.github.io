@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chest Opening</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="scene" id="scene">
+
+    <button class="chestWrap" id="chest" aria-label="Open chest">
+        <!-- CLOSED chest (lid down) -->
+        <img class="chestImg isClosed"
+             src="chestClosed.png"
+             alt="Closed chest"
+             draggable="false">
+
+        <!-- OPEN chest (lid up) -->
+        <img class="chestImg isOpen"
+             src="chestOpen.png"
+             alt="Open chest"
+             draggable="false">
+    </button>
+
+    <div class="loot" id="loot">💎</div>
+
+    <div class="sparkle">
+        <span>✨</span><span>✨</span><span>✨</span><span>✨</span>
+    </div>
+
+    <div class="hint">Click the chest</div>
+</div>
+<div class="groundShadow"></div>
+
+<!-- Full-screen celebration overlay -->
+<div class="celebrate" id="celebrate" aria-hidden="true">
+    <div class="celebrateCard">
+        <div class="celebrateTitle" id="celebrateTitle">🎉 Happy 1 Year!! 🎉</div>
+        <div class="celebrateSub" id="celebrateSub">Thanks for opening the chest.</div>
+        <button class="celebrateBtn" id="closeCelebrate" type="button">Nice!</button>
+    </div>
+</div>
+
+<!-- Confetti container -->
+<div class="confetti" id="confetti" aria-hidden="true"></div>
+
+
+<script src="script.js"></script>
+</body>
+</html>
