@@ -1,23 +1,77 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Website Attempt</title>
-    <link href="app.css" rel="stylesheet">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chest Opening</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="buttons">
 
-        <img src="catRose.jpg" id="catImage">
-        <h1>Will you be my valentine?</h1>
-        <button class="yesButton" id="yesButton" onclick="yesButtonClick()">
-            Yes
-        </button>
-        <button id="noButton" class="noButton" onclick="noButtonClick()">
-            No
-        </button>
+<div class="scene" id="scene">
+
+    <button class="chestWrap" id="chest" aria-label="Open chest">
+        <!-- CLOSED chest (lid down) -->
+        <img class="chestImg isClosed"
+             src="chestClosed.png"
+             alt="Closed chest"
+             draggable="false">
+
+        <!-- OPEN chest (lid up) -->
+        <img class="chestImg isOpen"
+             src="chestOpen.png"
+             alt="Open chest"
+             draggable="false">
+    </button>
+
+    <div class="loot" id="loot"></div>
+
+    <div class="sparkle">
+        <span>✨</span><span>✨</span><span>✨</span><span>✨</span>
+    </div>
+
+    <div class="hint">Click the chest</div>
+</div>
+<div class="groundShadow"></div>
+
+<!-- Full-screen celebration overlay -->
+<!-- Celebration + Slideshow overlay -->
+<div class="celebrate" id="celebrate" aria-hidden="true">
+    <div class="celebrateCard" role="dialog" aria-modal="true" aria-label="Reward slideshow">
+
+        <div class="celebrateHeader">
+            <div class="celebrateTitle" id="celebrateTitle">🎉 Happy 1 Year!! 🎉</div>
+            <button class="iconBtn" id="closeCelebrate" type="button" aria-label="Close">✕</button>
+        </div>
+
+        <div class="slider">
+            <button class="navBtn" id="prevSlide" type="button" aria-label="Previous">‹</button>
+
+            <div class="slide">
+                <img id="slideImg" alt="" />
+                <div class="slideText">
+                    <div class="slideHeading" id="slideHeading"></div>
+                    <div class="slideDesc" id="slideDesc"></div>
+                </div>
+            </div>
+
+            <button class="navBtn" id="nextSlide" type="button" aria-label="Next">›</button>
+        </div>
+
+        <div class="dots" id="dots"></div>
+
+        <button class="celebrateBtn" id="nextOrDone" type="button">Next</button>
+    </div>
 </div>
 
-<script src="app.js"></script>
+<!-- Confetti container -->
+<div class="confetti" id="confetti" aria-hidden="true"></div>
+
+<!-- Confetti container -->
+<div class="confetti" id="confetti" aria-hidden="true"></div>
+
+
+<script src="script.js"></script>
 </body>
 </html>

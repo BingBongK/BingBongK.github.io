@@ -18,8 +18,29 @@ const confetti = document.getElementById("confetti");
 
 /** ✅ Put your slideshow content here */
 const slides = [
-  { src: "pictures/jan1.jpg", title: "Welcome reward", desc: "Here’s your first surprise image." },
-  { src: "chestOpen.png", title: "Bonus", desc: "A little extra something for you." },
+  { src: "pictures/jan1.jpg", title: "January", desc: "First KBBQ with you and your friends" },
+  { src: "pictures/feb1.jpg", title: "February", desc: "Cute little photo" },
+  { src: "pictures/feb2.jpg", title: "February", desc: "Your smile is cute" },
+  { src: "pictures/feb3.jpg", title: "February", desc: "Tipsy meimei" },
+  { src: "pictures/feb4.jpg", title: "February", desc: "Miss the lizz line" },
+  { src: "pictures/mar1.jpg", title: "March", desc: "Best Mobile Legends teammate <3" },
+  { src: "pictures/apr1.jpeg", title: "April", desc: "Filipino mangoes" },
+  { src: "pictures/may1.jpg", title: "May", desc: "Outside our arcade date" },
+  { src: "pictures/may2.jpg", title: "May", desc: "Canary Wharf photo time" },
+  { src: "pictures/may3.jpg", title: "May", desc: "Soho photo booth experience" },
+  { src: "pictures/may4.jpg", title: "May", desc: "Our little legos" },
+  { src: "pictures/may5.jpg", title: "May", desc: "Duck and Waffle" },
+  { src: "pictures/may6.jpg", title: "May", desc: "The closest we've gotten to a Japan trip" },
+  { src: "pictures/june1.jpg", title: "June", desc: "Basketball Player meimei" },
+  { src: "pictures/jul1.jpg", title: "July", desc: "My muse" },
+  { src: "pictures/aug1.jpg", title: "August", desc: "Haidilao hotpot!" },
+  { src: "pictures/oct1.jpg", title: "October", desc: "I just thought this was funny" },
+  { src: "pictures/nov1.jpg", title: "November", desc: "I just thought this was funny #2" },
+  { src: "pictures/nov2.jpg", title: "November", desc: "K-Events with each other <3" },
+  { src: "pictures/dec1.jpg", title: "December 2024", desc: "Our first time meeting each other" },
+
+
+
 ];
 
 let current = 0;
