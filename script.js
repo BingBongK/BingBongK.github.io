@@ -42,7 +42,7 @@ const slides = [
 
 
 ];
-
+ 
 let current = 0;
 
 function popConfetti(count = 90) {
