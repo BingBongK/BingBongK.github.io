@@ -21,7 +21,7 @@ const slides = [
   { src: "pictures/jan1.jpg", title: "January", desc: "First KBBQ with you and your friends" },
   { src: "pictures/feb1.jpg", title: "February", desc: "Cute little photo" },
   { src: "pictures/feb2.jpg", title: "February", desc: "Your smile is cute" },
-  { src: "pictures/feb3.JPG", title: "February", desc: "Tipsy meimei" },
+  { src: "pictures/feb3.jpg", title: "February", desc: "Tipsy meimei" },
   { src: "pictures/feb4.jpg", title: "February", desc: "Miss the lizz line" },
   { src: "pictures/mar1.jpg", title: "March", desc: "Best Mobile Legends teammate <3" },
   { src: "pictures/apr1.jpeg", title: "April", desc: "Filipino mangoes" },
@@ -42,7 +42,7 @@ const slides = [
 
 
 ];
- 
+
 let current = 0;
 
 function popConfetti(count = 90) {
